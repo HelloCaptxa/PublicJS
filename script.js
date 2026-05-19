@@ -15,7 +15,11 @@ var root=el.firstElementChild,msg=root.querySelector('.captxa-msg'),track=root.q
 function sm(t,c){msg.textContent=t;msg.className='captxa-msg captxa-'+c;}
 function sb(p){bar.style.width=p+'%';}
 function ne(m){return new Error(m);}
-runSimple();
+if (opts.mode === 'complex') {
+    runComplex();
+} else {
+    runSimple();
+}
 function runSimple(){
 sm('Verifying\u2026','info');track.style.display='block';
 var rec=_traj();
